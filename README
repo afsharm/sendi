@@ -1,0 +1,3 @@
+sendi
+-----
+A simple REST application to send push notifications and log them, using Express and Mongoose.
