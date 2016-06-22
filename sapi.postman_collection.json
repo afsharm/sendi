@@ -1,0 +1,120 @@
+{
+	"variables": [],
+	"info": {
+		"name": "sapi",
+		"_postman_id": "f757376b-5606-a9d3-c254-a6d0c2d669d8",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create item",
+			"request": {
+				"url": "http://localhost:3000/api/logs",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "george",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get all",
+			"request": {
+				"url": "http://localhost:3000/api/logs",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get single",
+			"request": {
+				"url": "http://localhost:3000/api/logs/576a2d3e5ee05c7032538878",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"url": "http://localhost:3000/api/logs/576a2d3e5ee05c7032538878",
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "brown",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "send_push",
+			"request": {
+				"url": "http://localhost:3000/api/send_push",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "destinations",
+							"value": "09123335566, 09361238888",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "is_silent",
+							"value": "false",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "os_list",
+							"value": "android, ios",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "message",
+							"value": "hello buddy!",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

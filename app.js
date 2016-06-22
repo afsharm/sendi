@@ -1,3 +1,4 @@
+var moment = require("moment");
 var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
@@ -75,6 +76,28 @@ router.route('/logs/:log_id')
 
             res.json({ message: 'Successfully deleted' });
         });
+    });
+
+router.route('/send_push')
+    .post(function(req, res) {
+
+        //first send push
+
+        //then log it
+        var log = new Log();
+        log.destinations = req.body.destinations;
+        log.is_silent = req.body.is_silent;
+        log.os_list = req.body.os_list;
+        log.message = req.body.message;
+        log.type = 'send_push';
+        log.occurance = moment().toISOString();
+
+        log.save(function(err) {
+            if (err)
+                res.send(err);
+
+            res.json({ message: 'send push completed' });
+        });        
     });
 
 app.use('/api', router);
